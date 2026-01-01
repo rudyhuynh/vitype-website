@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ViType - Ứng dụng gõ tiếng Việt mã nguồn mở cho MacOS. Hỗ trợ Telex, VNI, exclude app và nhiều tính năng hữu ích khác."
+    />
+    <meta
+      name="keywords"
+      content="ViType, gõ tiếng Việt, Telex, VNI, MacOS, mã nguồn mở, Vietnamese typing"
+    />
+    <meta name="author" content="ViType" />
+    <meta property="og:title" content="ViType - Gõ Tiếng Việt Thông Minh" />
+    <meta
+      property="og:description"
+      content="Ứng dụng gõ tiếng Việt mã nguồn mở cho MacOS với nhiều tính năng thông minh."
+    />
+    <meta property="og:type" content="website" />
+    <title>ViType - Gõ Tiếng Việt Thông Minh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <span class="logo-icon">V</span>
+          <span class="logo-text">ViType</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#features">Tính năng</a></li>
+          <li><a href="#download">Tải về</a></li>
+          <li>
+            <a
+              href="https://github.com/nicepkg/vitype"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">✨</span>
+            <span>Mã nguồn mở</span>
+          </div>
+          <h1 class="hero-title">
+            Gõ Tiếng Việt<br />
+            <span class="gradient-text">Thông Minh</span>
+          </h1>
+          <p class="hero-description">
+            ViType là ứng dụng gõ tiếng Việt mã nguồn mở, được thiết kế để mang
+            đến trải nghiệm gõ tiếng Việt mượt mà và thông minh nhất trên MacOS.
+          </p>
+          <div class="hero-buttons">
+            <a href="#download" class="btn btn-primary">
+              <svg
+                class="btn-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Tải về ngay
+            </a>
+            <a
+              href="https://github.com/nicepkg/vitype"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-secondary"
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              Xem trên GitHub
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="keyboard-demo">
+            <div class="keyboard-window">
+              <div class="window-header">
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+              </div>
+              <div class="typing-demo">
+                <span class="typing-text" id="typing-text"></span>
+                <span class="cursor">|</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>Cuộn xuống</span>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Tính năng</span>
+          <h2 class="section-title">
+            Mọi thứ bạn cần để<br /><span class="gradient-text"
+              >gõ tiếng Việt hoàn hảo</span
+            >
+          </h2>
+          <p class="section-description">
+            ViType được thiết kế với nhiều tính năng thông minh giúp bạn gõ
+            tiếng Việt một cách tự nhiên và hiệu quả nhất.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path
+                  d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Hỗ trợ Telex & VNI</h3>
+            <p class="feature-description">
+              Linh hoạt lựa chọn kiểu gõ phù hợp với thói quen của bạn. Hỗ trợ
+              đầy đủ cả hai kiểu gõ phổ biến nhất.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M18 6L6 18M6 6l12 12"></path>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            </div>
+            <h3 class="feature-title">Exclude App</h3>
+            <p class="feature-description">
+              Tự động tắt tiếng Việt khi sử dụng các ứng dụng bạn chỉ định.
+              Không lo gõ nhầm khi đang code hay làm việc.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature-title">Thân thiện với Lập trình viên</h3>
+            <p class="feature-description">
+              Tự động nhận diện context code và tắt tiếng Việt. Không còn gõ
+              tiếng Việt nhầm khi đang trong IDE hay terminal.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Sửa lỗi Chrome Address Bar</h3>
+            <p class="feature-description">
+              Giải quyết hoàn toàn vấn đề gõ dấu bị lỗi trên thanh địa chỉ
+              Chrome. Gõ tiếng Việt mượt mà ở mọi nơi.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Mã nguồn mở</h3>
+            <p class="feature-description">
+              Hoàn toàn miễn phí và mã nguồn mở. Cộng đồng có thể đóng góp và
+              kiểm tra mã nguồn để đảm bảo an toàn.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Nhẹ & Nhanh</h3>
+            <p class="feature-description">
+              Được tối ưu hóa để sử dụng ít tài nguyên nhất. Chạy mượt mà ngay
+              cả trên các máy cấu hình thấp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Tải về</span>
+          <h2 class="section-title">
+            Bắt đầu sử dụng<br /><span class="gradient-text"
+              >ViType ngay hôm nay</span
+            >
+          </h2>
+          <p class="section-description">
+            Tải về miễn phí và trải nghiệm cách gõ tiếng Việt hoàn toàn mới.
+          </p>
+        </div>
+        <div class="download-cards">
+          <div class="download-card available">
+            <div class="download-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                />
+              </svg>
+            </div>
+            <h3 class="download-title">MacOS</h3>
+            <p class="download-version">Phiên bản mới nhất</p>
+            <p class="download-requirements">macOS 11.0 Big Sur trở lên</p>
+            <a
+              href="https://github.com/nicepkg/vitype/releases"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary btn-download"
+            >
+              <svg
+                class="btn-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Tải về cho MacOS
+            </a>
+          </div>
+          <div class="download-card coming-soon">
+            <div class="download-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"
+                />
+              </svg>
+            </div>
+            <h3 class="download-title">Windows</h3>
+            <div class="coming-soon-badge">
+              <span class="pulse"></span>
+              Đang phát triển
+            </div>
+            <p class="download-requirements">
+              Sẽ sớm ra mắt trong thời gian tới
+            </p>
+            <button class="btn btn-disabled" disabled>
+              <svg
+                class="btn-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Chờ đón nhé
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <span class="logo-icon">V</span>
+              <span class="logo-text">ViType</span>
+            </a>
+            <p class="footer-tagline">Gõ tiếng Việt thông minh, mã nguồn mở.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Liên kết</h4>
+              <ul>
+                <li><a href="#features">Tính năng</a></li>
+                <li><a href="#download">Tải về</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Cộng đồng</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/nicepkg/vitype"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/nicepkg/vitype/issues"
+                    target="_blank"
+                    rel="noopener"
+                    >Báo lỗi</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 ViType. Mã nguồn mở theo giấy phép MIT.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
