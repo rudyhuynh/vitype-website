@@ -1,6 +1,6 @@
 /* TEAM */
 Project: ViType
-Website: https://vitype.app
+Website: https://vitype.io.vn
 GitHub: https://github.com/nicepkg/vitype
 License: MIT
 
