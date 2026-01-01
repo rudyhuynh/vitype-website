@@ -1,0 +1,102 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f13"/>
+      <stop offset="50%" style="stop-color:#18181f"/>
+      <stop offset="100%" style="stop-color:#0f0f13"/>
+    </linearGradient>
+    
+    <!-- Accent gradient -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#d946ef"/>
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
+    </radialGradient>
+    
+    <!-- Logo gradient -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e0e0e0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Ambient glow -->
+  <ellipse cx="600" cy="280" rx="500" ry="300" fill="url(#glowGradient)"/>
+  
+  <!-- Decorative elements - keyboard keys -->
+  <g opacity="0.1">
+    <rect x="100" y="100" width="60" height="60" rx="8" stroke="#6366f1" stroke-width="2" fill="none"/>
+    <rect x="180" y="80" width="60" height="60" rx="8" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+    <rect x="1020" y="120" width="60" height="60" rx="8" stroke="#d946ef" stroke-width="2" fill="none"/>
+    <rect x="1100" y="90" width="60" height="60" rx="8" stroke="#6366f1" stroke-width="2" fill="none"/>
+    <rect x="120" y="450" width="60" height="60" rx="8" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+    <rect x="1040" y="480" width="60" height="60" rx="8" stroke="#d946ef" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Logo icon background -->
+  <rect x="530" y="140" width="140" height="140" rx="24" fill="url(#accentGradient)"/>
+  
+  <!-- V and T letterform in logo -->
+  <g transform="translate(550, 160)">
+    <!-- Circumflex -->
+    <path d="M35 20 L50 5 L65 20" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- V shape -->
+    <polygon points="20,30 35,30 52,75 42,75" fill="white"/>
+    <polygon points="42,75 52,75 60,55 60,40 52,40 52,55" fill="white"/>
+    <!-- T bar -->
+    <rect x="35" y="30" width="55" height="12" rx="2" fill="white"/>
+    <!-- T stem -->
+    <rect x="52" y="42" width="16" height="38" fill="url(#logoGradient)"/>
+  </g>
+  
+  <!-- ViType text -->
+  <text x="600" y="360" 
+        font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, Inter, Segoe UI, sans-serif" 
+        font-size="72" 
+        font-weight="700" 
+        fill="white" 
+        text-anchor="middle"
+        letter-spacing="4">ViType</text>
+  
+  <!-- Tagline with gradient -->
+  <text x="600" y="420" 
+        font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, Inter, Segoe UI, sans-serif" 
+        font-size="32" 
+        font-weight="500" 
+        fill="url(#accentGradient)" 
+        text-anchor="middle"
+        letter-spacing="2">Gõ Tiếng Việt Thông Minh</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="480" 
+        font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, Inter, Segoe UI, sans-serif" 
+        font-size="22" 
+        font-weight="400" 
+        fill="#94a3b8" 
+        text-anchor="middle">Mã nguồn mở • MacOS • Telex & VNI</text>
+  
+  <!-- Bottom accent line -->
+  <rect x="400" y="540" width="400" height="4" rx="2" fill="url(#accentGradient)"/>
+  
+  <!-- GitHub badge -->
+  <g transform="translate(520, 560)">
+    <rect x="0" y="0" width="160" height="36" rx="18" fill="#252530" stroke="#2d2d3a" stroke-width="1"/>
+    <circle cx="24" cy="18" r="10" fill="#6366f1"/>
+    <text x="90" y="24" 
+          font-family="Inter, sans-serif" 
+          font-size="14" 
+          font-weight="500" 
+          fill="#94a3b8" 
+          text-anchor="middle">Open Source</text>
+  </g>
+</svg>

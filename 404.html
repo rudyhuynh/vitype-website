@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Trang không tìm thấy - ViType - Ứng dụng gõ tiếng Việt mã nguồn mở cho MacOS."
+    />
+    <meta name="robots" content="noindex, follow" />
+    <title>404 - Không tìm thấy trang | ViType</title>
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/vitype-logo.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#6366f1" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* 404 Page Specific Styles */
+      .error-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: var(--space-xl);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .error-bg {
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-glow);
+        opacity: 0.6;
+      }
+
+      .error-bg::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.1) 0%,
+          transparent 60%
+        );
+        animation: pulse-glow 8s ease-in-out infinite;
+      }
+
+      .error-content {
+        position: relative;
+        z-index: 1;
+        max-width: 600px;
+      }
+
+      .error-code {
+        font-size: clamp(8rem, 25vw, 12rem);
+        font-weight: 800;
+        line-height: 1;
+        background: var(--gradient-text);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: var(--space-lg);
+        animation: float 6s ease-in-out infinite;
+        text-shadow: 0 0 80px rgba(99, 102, 241, 0.3);
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(2deg);
+        }
+      }
+
+      .error-illustration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: var(--space-2xl);
+      }
+
+      .error-keyboard {
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        padding: var(--space-lg) var(--space-2xl);
+        box-shadow: var(--shadow-xl);
+        animation: shake 4s ease-in-out infinite;
+      }
+
+      @keyframes shake {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        10%, 30%, 50%, 70%, 90% {
+          transform: translateX(-2px);
+        }
+        20%, 40%, 60%, 80% {
+          transform: translateX(2px);
+        }
+      }
+
+      .keyboard-keys {
+        display: flex;
+        gap: var(--space-sm);
+        justify-content: center;
+      }
+
+      .key {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+        color: var(--color-text);
+        transition: all var(--transition-fast);
+      }
+
+      .key:nth-child(1) {
+        animation: key-press 2s ease-in-out infinite 0s;
+      }
+      .key:nth-child(2) {
+        animation: key-press 2s ease-in-out infinite 0.2s;
+      }
+      .key:nth-child(3) {
+        animation: key-press 2s ease-in-out infinite 0.4s;
+      }
+
+      @keyframes key-press {
+        0%, 20%, 100% {
+          transform: translateY(0);
+          background: var(--color-surface);
+        }
+        10% {
+          transform: translateY(3px);
+          background: rgba(99, 102, 241, 0.2);
+          border-color: var(--color-primary);
+        }
+      }
+
+      .error-title {
+        font-size: var(--font-size-3xl);
+        font-weight: 700;
+        margin-bottom: var(--space-md);
+        animation: fade-in-up 0.6s ease-out 0.2s backwards;
+      }
+
+      .error-description {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-secondary);
+        margin-bottom: var(--space-2xl);
+        line-height: 1.7;
+        animation: fade-in-up 0.6s ease-out 0.3s backwards;
+      }
+
+      .error-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-md);
+        justify-content: center;
+        animation: fade-in-up 0.6s ease-out 0.4s backwards;
+      }
+
+      .error-links {
+        margin-top: var(--space-3xl);
+        padding-top: var(--space-2xl);
+        border-top: 1px solid var(--color-border);
+        animation: fade-in-up 0.6s ease-out 0.5s backwards;
+      }
+
+      .error-links p {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-md);
+      }
+
+      .quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-lg);
+        justify-content: center;
+      }
+
+      .quick-link {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        transition: color var(--transition-fast);
+      }
+
+      .quick-link:hover {
+        color: var(--color-primary);
+      }
+
+      .quick-link svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Floating particles */
+      .particles {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--color-primary);
+        border-radius: 50%;
+        opacity: 0.3;
+        animation: particle-float 15s linear infinite;
+      }
+
+      .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+      .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 18s; }
+      .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 14s; }
+      .particle:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 16s; }
+      .particle:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 20s; }
+      .particle:nth-child(6) { left: 60%; animation-delay: 3s; animation-duration: 13s; }
+      .particle:nth-child(7) { left: 70%; animation-delay: 5s; animation-duration: 17s; }
+      .particle:nth-child(8) { left: 80%; animation-delay: 7s; animation-duration: 15s; }
+      .particle:nth-child(9) { left: 90%; animation-delay: 1s; animation-duration: 19s; }
+
+      @keyframes particle-float {
+        0% {
+          transform: translateY(100vh) scale(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.3;
+        }
+        90% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-100px) scale(1);
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .error-code {
+          font-size: 6rem;
+        }
+
+        .key {
+          width: 40px;
+          height: 40px;
+          font-size: var(--font-size-base);
+        }
+
+        .error-title {
+          font-size: var(--font-size-2xl);
+        }
+
+        .error-description {
+          font-size: var(--font-size-base);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-page">
+      <div class="error-bg"></div>
+      
+      <!-- Floating particles -->
+      <div class="particles">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+      </div>
+
+      <div class="error-content">
+        <div class="error-code">404</div>
+        
+        <div class="error-illustration">
+          <div class="error-keyboard">
+            <div class="keyboard-keys">
+              <div class="key">4</div>
+              <div class="key">0</div>
+              <div class="key">4</div>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="error-title">Oops! Trang không tìm thấy</h1>
+        <p class="error-description">
+          Có vẻ như bạn đã lạc đường rồi! Trang bạn đang tìm kiếm không tồn tại 
+          hoặc đã được di chuyển đến địa chỉ khác.
+        </p>
+
+        <div class="error-buttons">
+          <a href="/" class="btn btn-primary">
+            <svg
+              class="btn-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            Về trang chủ
+          </a>
+          <a
+            href="https://github.com/nicepkg/vitype"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            Xem GitHub
+          </a>
+        </div>
+
+        <div class="error-links">
+          <p>Hoặc thử các liên kết sau:</p>
+          <div class="quick-links">
+            <a href="/#features" class="quick-link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              Tính năng
+            </a>
+            <a href="/#download" class="quick-link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Tải về
+            </a>
+            <a
+              href="https://github.com/nicepkg/vitype/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-link"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              Báo lỗi
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
