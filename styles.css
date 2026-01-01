@@ -658,6 +658,19 @@ button {
   width: 100%;
 }
 
+.download-alt-link {
+  display: block;
+  margin-top: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+  transition: color var(--transition-fast);
+}
+
+.download-alt-link:hover {
+  color: var(--color-primary);
+}
+
 .coming-soon-badge {
   display: inline-flex;
   align-items: center;
