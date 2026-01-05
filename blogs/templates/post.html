@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-19CK1P0R8P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-19CK1P0R8P');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{{TITLE}} | ViType Blog</title>
+    <meta name="title" content="{{TITLE}} | ViType Blog" />
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta name="keywords" content="{{KEYWORDS}}" />
+    <meta name="author" content="{{AUTHOR}}" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="Vietnamese" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="generator" content="ViType Blog" />
+    <meta name="article:published_time" content="{{DATE_ISO}}" />
+    <meta name="article:author" content="{{AUTHOR}}" />
+    <meta name="article:tag" content="{{TAGS}}" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vitype.io.vn/blog/posts/{{SLUG}}.html" />
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/vitype-logo.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/vitype-logo.svg" color="#6366f1" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="msapplication-TileColor" content="#0f0f13" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ViType" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vitype.io.vn/blog/posts/{{SLUG}}.html" />
+    <meta property="og:title" content="{{TITLE}}" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:image" content="https://vitype.io.vn/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{TITLE}}" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="ViType" />
+    <meta property="article:published_time" content="{{DATE_ISO}}" />
+    <meta property="article:author" content="{{AUTHOR}}" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://vitype.io.vn/blog/posts/{{SLUG}}.html" />
+    <meta name="twitter:title" content="{{TITLE}}" />
+    <meta name="twitter:description" content="{{DESCRIPTION}}" />
+    <meta name="twitter:image" content="https://vitype.io.vn/og-image.svg" />
+    <meta name="twitter:image:alt" content="{{TITLE}}" />
+    <meta name="twitter:creator" content="@ttdatt" />
+    
+    <!-- Additional SEO Links -->
+    <link rel="author" href="/humans.txt" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    
+    <!-- Structured Data - BlogPosting Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{TITLE}}",
+      "description": "{{DESCRIPTION}}",
+      "image": "https://vitype.io.vn/og-image.svg",
+      "datePublished": "{{DATE_ISO}}",
+      "dateModified": "{{DATE_ISO}}",
+      "author": {
+        "@type": "Person",
+        "name": "{{AUTHOR}}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ViType",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vitype.io.vn/vitype-logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vitype.io.vn/blog/posts/{{SLUG}}.html"
+      },
+      "keywords": "{{KEYWORDS}}",
+      "articleSection": "{{TAGS}}",
+      "inLanguage": "vi"
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Trang chủ",
+          "item": "https://vitype.io.vn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://vitype.io.vn/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{TITLE}}",
+          "item": "https://vitype.io.vn/blog/posts/{{SLUG}}.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://github.com" />
+    
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css" />
+  </head>
+  <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Chuyển đến nội dung chính</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="container nav-container">
+        <a href="/" class="logo">
+          <span class="logo-icon">V</span>
+          <span class="logo-text">ViType</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Tính năng</a></li>
+          <li><a href="/#download">Tải về</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li>
+            <a
+              href="https://github.com/ttdatt/vitype"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="blog-post-page">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+          <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="/">
+                <span itemprop="name">Trang chủ</span>
+              </a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="/blog/">
+                <span itemprop="name">Blog</span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span itemprop="name">{{TITLE}}</span>
+              <meta itemprop="position" content="3" />
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- Blog Post -->
+      <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="container blog-container">
+          <!-- Post Header -->
+          <header class="blog-header">
+            <h1 itemprop="headline">{{TITLE}}</h1>
+            <div class="blog-meta">
+              <time itemprop="datePublished" datetime="{{DATE_ISO}}">{{DATE}}</time>
+              <span class="meta-separator">•</span>
+              <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">{{AUTHOR}}</span>
+              </span>
+            </div>
+            <div class="blog-tags">
+              {{TAGS_HTML}}
+            </div>
+          </header>
+
+          <!-- Post Content -->
+          <div class="blog-content" itemprop="articleBody">
+            {{CONTENT}}
+          </div>
+
+          <!-- Post Footer -->
+          <footer class="blog-footer">
+            <a href="/blog/" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Quay lại Blog
+            </a>
+          </footer>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="/" class="logo">
+              <span class="logo-icon">V</span>
+              <span class="logo-text">ViType</span>
+            </a>
+            <p class="footer-tagline">Gõ tiếng Việt thông minh, mã nguồn mở.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Liên kết</h4>
+              <ul>
+                <li><a href="/#features">Tính năng</a></li>
+                <li><a href="/#download">Tải về</a></li>
+                <li><a href="/blog/">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Cộng đồng</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/ttdatt/vitype"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/ttdatt/vitype/issues"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Báo lỗi</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 ViType. Mã nguồn mở theo giấy phép <a href="https://github.com/ttdatt/vitype/blob/main/LICENSE">GPL-3.0</a>.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
