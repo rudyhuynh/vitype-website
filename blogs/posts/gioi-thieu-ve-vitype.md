@@ -6,8 +6,6 @@ description: "Từ những hạn chế của các trình gõ tiếng Việt hi�
 tags: ["ViType", "Giới thiệu", "MacOS", "Mã nguồn mở", "Open source"]
 ---
 
-# ViType – Trình gõ tiếng Việt mã nguồn mở, tối ưu cho người dùng đa nhiệm
-
 Trong nhiều năm, EVKey từng được cộng đồng người dùng Việt Nam đánh giá là một trong những trình gõ tiếng Việt có trải nghiệm tốt và ổn định. Tuy nhiên, kể từ khoảng năm 2022, EVKey đã ngừng có những cập nhật mới và [chính thức ngừng phát triển](https://dantri.com.vn/cong-nghe/tac-gia-bo-go-tieng-viet-evkey-xac-nhan-khai-tu-san-pham-20250328090129149.htm). Trên các hệ điều hành mới, ứng dụng hiện gặp một số vấn đề, điển hình là không thể mở được phần cài đặt (settings), gây bất tiện cho người dùng trong quá trình sử dụng lâu dài.
 
 ## Khi những lựa chọn hiện tại chưa thực sự phù hợp
