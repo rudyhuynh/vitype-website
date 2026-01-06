@@ -1,8 +1,8 @@
 /* TEAM */
 Project: ViType
 Website: https://vitype.io.vn
-GitHub: https://github.com/nicepkg/vitype
-License: MIT
+GitHub: https://github.com/ttdatt/vitype
+License: GPL-3.0
 
 /* THANKS */
 Cảm ơn bạn đã sử dụng ViType!
