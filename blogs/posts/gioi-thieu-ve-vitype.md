@@ -2,21 +2,20 @@
 title: "ViType – Trình gõ tiếng Việt mã nguồn mở, tối ưu cho người dùng đa nhiệm"
 date: "2026-01-05"
 author: "ViType Team"
-description: "Từ những hạn chế của EVKey, OpenKey và các trình gõ hiện tại, ViType ra đời với mục tiêu mang đến trải nghiệm gõ tiếng Việt ổn định, linh hoạt và thân thiện với lập trình viên."
+description: "Từ những hạn chế của các trình gõ tiếng Việt hiện tại, ViType ra đời với mục tiêu mang đến trải nghiệm gõ tiếng Việt đơn giản, ổn định, và thân thiện với người dùng đa nhiệm."
 tags: ["ViType", "Giới thiệu", "MacOS", "Mã nguồn mở", "Open source"]
 ---
 
 # ViType – Trình gõ tiếng Việt mã nguồn mở, tối ưu cho người dùng đa nhiệm
 
-Trong nhiều năm, EVKey từng được cộng đồng người dùng Việt Nam đánh giá là một trong những trình gõ tiếng Việt có trải nghiệm tốt và ổn định. Tuy nhiên, kể từ khoảng năm 2021, EVKey đã ngừng được hỗ trợ và phát triển. Trên các hệ điều hành mới, ứng dụng hiện gặp một số vấn đề, điển hình là không thể mở được phần cài đặt (settings), gây bất tiện cho người dùng trong quá trình sử dụng lâu dài.
+Trong nhiều năm, EVKey từng được cộng đồng người dùng Việt Nam đánh giá là một trong những trình gõ tiếng Việt có trải nghiệm tốt và ổn định. Tuy nhiên, kể từ khoảng năm 2022, EVKey đã ngừng có những cập nhật mới và [chính thức ngừng phát triển](https://dantri.com.vn/cong-nghe/tac-gia-bo-go-tieng-viet-evkey-xac-nhan-khai-tu-san-pham-20250328090129149.htm). Trên các hệ điều hành mới, ứng dụng hiện gặp một số vấn đề, điển hình là không thể mở được phần cài đặt (settings), gây bất tiện cho người dùng trong quá trình sử dụng lâu dài.
 
 ## Khi những lựa chọn hiện tại chưa thực sự phù hợp
 
-Một số trình gõ tiếng Việt khác vẫn đang được sử dụng phổ biến, tuy nhiên trong thực tế vẫn tồn tại những điểm chưa thật sự trọn vẹn:
+Các trình gõ tiếng Việt hiện nay tuy đã được sử dụng rộng rãi, nhưng trong thực tế vẫn tồn tại những hạn chế đáng lưu ý:
 
-- **OpenKey** đôi khi gặp tình trạng mất dấu hoặc bỏ dấu sai, đặc biệt khi thao tác nhanh hoặc khi máy đang mở nhiều ứng dụng cùng lúc.
-
-- **Gõ Tiếng Việt (Gotiengviet)** vẫn còn lỗi hiển thị "đđ" khi nhập liệu trên Chrome taskbar.
+- Vấn đề về độ chính xác: Nhiều trình gõ đôi khi gặp tình trạng mất dấu, gõ sai dấu thanh, hoặc không nhận diện đúng ngữ cảnh - đặc biệt khi gõ nhanh hoặc khi hệ thống đang xử lý nhiều tác vụ đồng thời.
+- Lỗi hiển thị trên một số ứng dụng: Một số trường hợp còn xuất hiện lỗi kỹ thuật như ký tự bị lặp hoặc hiển thị không chính xác trên các trình duyệt và ứng dụng phổ biến.
 
 Với những người thường xuyên làm việc đa nhiệm, đặc biệt là lập trình viên, việc chuyển qua lại giữa ứng dụng chat, trình duyệt và IDE như Visual Studio Code là điều diễn ra hàng ngày. Phần lớn các trình gõ hiện nay chưa hỗ trợ tốt việc tự động loại trừ ứng dụng, dẫn đến việc phải bật/tắt thủ công, làm gián đoạn luồng làm việc.
 
@@ -24,8 +23,8 @@ Với những người thường xuyên làm việc đa nhiệm, đặc biệt l
 
 Từ những trải nghiệm đó, ViType ra đời với mong muốn mang lại một trình gõ tiếng Việt đơn giản, ổn định và linh hoạt hơn, đặc biệt phù hợp với những người:
 
-- Thường xuyên chuyển đổi giữa viết nội dung và viết mã
-- Làm việc trong môi trường đa ngôn ngữ
+- Thường xuyên chuyển đổi giữa viết nội dung và viết mã.
+- Làm việc trong môi trường đa ngôn ngữ.
 - Ưu tiên phần mềm nhẹ, miễn phí và minh bạch.
 
 ViType là phần mềm mã nguồn mở và hoàn toàn miễn phí, được phát triển hướng tới cộng đồng người dùng Việt Nam.
@@ -53,5 +52,3 @@ ViType vẫn đang trong quá trình hoàn thiện và rất mong nhận đượ
 👉 [Dùng thử ViType](/#download) và chia sẻ cảm nhận của bạn
 
 👉 Đóng góp mã nguồn, báo lỗi hoặc đề xuất tính năng trên GitHub tại [https://github.com/ttdatt/vitype](https://github.com/ttdatt/vitype)
-
-Mỗi phản hồi, mỗi pull request hay một issue nhỏ đều là sự đóng góp quý giá giúp ViType tiến gần hơn tới mục tiêu mang lại trải nghiệm gõ tiếng Việt tốt nhất cho cộng đồng.
