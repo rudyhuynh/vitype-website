@@ -142,3 +142,13 @@ const downloadCards = document.querySelectorAll(".download-card");
 downloadCards.forEach((card, index) => {
   card.style.transitionDelay = `${index * 150}ms`;
 });
+
+// ===== Google Analytics Event Tracking =====
+const btnDownload = document.getElementById("btn-download");
+if (btnDownload) {
+  btnDownload.addEventListener("click", function () {
+    if (typeof gtag === "function") {
+      gtag("event", "download");
+    }
+  });
+}
