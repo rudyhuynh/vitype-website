@@ -1,0 +1,15 @@
+/* TEAM */
+Project: ViType
+Website: https://vitype.io.vn
+GitHub: https://github.com/ttdatt/vitype
+License: GPL-3.0
+
+/* THANKS */
+Cảm ơn bạn đã sử dụng ViType!
+Thank you for using ViType!
+
+/* SITE */
+Last update: 2026-01-01
+Language: Vietnamese (vi)
+Standards: HTML5, CSS3, JavaScript ES6+
+Software: Visual Studio Code, GitHub Pages

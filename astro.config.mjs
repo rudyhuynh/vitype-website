@@ -6,6 +6,6 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://vitype.io.vn",
-  outDir: "./dist",
+  outDir: "./docs",
   integrations: [react(), sitemap()],
 });

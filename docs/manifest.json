@@ -1,0 +1,40 @@
+{
+  "name": "ViType - Gõ Tiếng Việt Thông Minh",
+  "short_name": "ViType",
+  "description": "Ứng dụng gõ tiếng Việt mã nguồn mở cho MacOS. Hỗ trợ Telex, VNI, exclude app và nhiều tính năng hữu ích khác.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f13",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "lang": "vi",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://vitype.io.vn/"
+    }
+  ],
+  "prefer_related_applications": false
+}

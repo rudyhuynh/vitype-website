@@ -1,0 +1,15 @@
+# ViType Website Robots.txt
+# https://vitype.io.vn
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://vitype.io.vn/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block common unnecessary paths
+Disallow: /*.json$
+Disallow: /manifest.json
