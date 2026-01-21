@@ -83,6 +83,64 @@
   --transition-slow: 350ms ease;
 }
 
+/* ===== Dark Theme Variables ===== */
+[data-theme="dark"] {
+  /* Colors - Inverted for dark mode */
+  --color-primary: #ffffff;
+  --color-primary-dark: #f8f9fa;
+  --color-primary-light: #e5e7eb;
+  --color-secondary: #d1d5db;
+  --color-accent: #ffffff;
+
+  /* Neutrals - Dark mode */
+  --color-bg: #0f0f13;
+  --color-bg-secondary: #18181f;
+  --color-bg-tertiary: #1f1f28;
+  --color-surface: #252530;
+  --color-border: #2d2d3a;
+
+  /* Text */
+  --color-text: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+
+  /* Gradients - Light on dark */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #e5e7eb 50%,
+    #d1d5db 100%
+  );
+  --gradient-text: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f8f9fa 35%,
+    #e5e7eb 70%,
+    #d1d5db 100%
+  );
+  --gradient-glow: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 70%
+  );
+
+  /* Shadows - Dark mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode button text fix */
+[data-theme="dark"] .btn-primary {
+  color: #0f0f13;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(255, 255, 255, 0.2);
+}
+
 /* ===== Reset & Base ===== */
 *,
 *::before,
@@ -212,6 +270,10 @@ button {
   border-bottom-color: var(--color-border);
 }
 
+[data-theme="dark"] .navbar {
+  background: rgba(15, 15, 19, 0.9);
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -273,6 +335,58 @@ button {
   background: var(--color-text);
   border-radius: 2px;
   transition: all var(--transition-fast);
+}
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.theme-toggle:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-primary);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-text);
+  stroke-width: 2;
+  fill: none;
+  transition: all var(--transition-base);
+}
+
+.theme-toggle .sun-icon {
+  display: block;
+}
+
+.theme-toggle .moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: block;
+}
+
+/* Nav actions container */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 /* ===== Hero Section ===== */

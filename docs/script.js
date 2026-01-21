@@ -3,6 +3,54 @@ const navbar = document.getElementById("navbar");
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const navLinks = document.getElementById("nav-links");
 const typingText = document.getElementById("typing-text");
+const themeToggle = document.getElementById("theme-toggle");
+
+// ===== Theme Toggle =====
+function getSystemTheme() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function getStoredTheme() {
+  return localStorage.getItem("theme");
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+}
+
+function initTheme() {
+  // Priority: stored preference > system preference
+  const storedTheme = getStoredTheme();
+  const systemTheme = getSystemTheme();
+  const theme = storedTheme || systemTheme;
+  setTheme(theme);
+}
+
+// Initialize theme on page load
+initTheme();
+
+// Theme toggle button click handler
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme") || "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+  });
+}
+
+// Listen for system theme changes
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (e) => {
+    // Only auto-switch if user hasn't set a preference
+    if (!getStoredTheme()) {
+      setTheme(e.matches ? "dark" : "light");
+    }
+  });
 
 // ===== Mobile Menu Toggle =====
 mobileMenuBtn.addEventListener("click", () => {
