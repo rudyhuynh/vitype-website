@@ -1,0 +1,79 @@
+---
+import ThemeToggle from "./ThemeToggle";
+
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage } = Astro.props;
+---
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="container nav-container">
+    <a href="/" class="logo">
+      <span class="logo-icon"><img src="/icon-128.png" alt="ViType" /></span>
+      <span class="logo-text">ViType</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li>
+        <a href="/#features" class={currentPage === "features" ? "active" : ""}
+          >Tính năng</a>
+      </li>
+      <li>
+        <a href="/#download" class={currentPage === "download" ? "active" : ""}
+          >Tải về</a>
+      </li>
+      <li>
+        <a
+          href="/blog/"
+          class={currentPage === "blog" ? "active" : ""}
+          aria-current={currentPage === "blog" ? "page" : undefined}>Blog</a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/ttdatt/vitype"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a
+        >
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <ThemeToggle client:load />
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const navLinks = document.getElementById("nav-links");
+
+  mobileMenuBtn?.addEventListener("click", () => {
+    mobileMenuBtn.classList.toggle("active");
+    navLinks?.classList.toggle("active");
+  });
+
+  // Close mobile menu when clicking a link
+  navLinks?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenuBtn?.classList.remove("active");
+      navLinks.classList.remove("active");
+    });
+  });
+
+  // Navbar scroll effect
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 50) {
+      navbar?.classList.add("scrolled");
+    } else {
+      navbar?.classList.remove("scrolled");
+    }
+  });
+</script>

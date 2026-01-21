@@ -1,19 +1,30 @@
 {
   "name": "vitype-website",
+  "type": "module",
   "version": "1.0.0",
-  "description": "ViType static website with blog system",
+  "description": "ViType website built with Astro + React",
   "scripts": {
-    "build:blog": "node blogs/build.js"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3",
-    "highlight.js": "^11.9.0",
-    "markdown-it": "^14.0.0",
-    "markdown-it-anchor": "^8.6.7"
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.16.11",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3"
   },
   "keywords": [
     "vitype",
-    "blog"
+    "vietnamese",
+    "typing",
+    "astro"
   ],
   "author": "ViType Team",
   "license": "GPL-3.0"

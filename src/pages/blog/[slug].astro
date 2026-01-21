@@ -1,0 +1,226 @@
+---
+import { getCollection } from "astro:content";
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("vi-VN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+const title = `${post.data.title} | ViType Blog`;
+const description = post.data.description;
+const canonicalUrl = `https://vitype.io.vn/blog/${post.slug}/`;
+const keywords = [
+  ...(post.data.tags || []),
+  "ViType",
+  "gõ tiếng Việt",
+  "Vietnamese typing",
+].join(", ");
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  ogType="article"
+>
+  <Fragment slot="head">
+    <meta name="keywords" content={keywords} />
+    <meta
+      name="article:published_time"
+      content={new Date(post.data.date).toISOString()}
+    />
+    <meta name="article:author" content={post.data.author} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.data.title,
+        description: post.data.description,
+        image: "https://vitype.io.vn/og-image.png",
+        datePublished: new Date(post.data.date).toISOString(),
+        dateModified: new Date(post.data.date).toISOString(),
+        author: {
+          "@type": "Person",
+          name: post.data.author,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "ViType",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://vitype.io.vn/icon-512.png",
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": canonicalUrl,
+        },
+        keywords: keywords,
+        inLanguage: "vi",
+      })}
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css"
+    />
+  </Fragment>
+
+  <style>
+    .blog-post-page {
+      padding-top: 100px;
+    }
+
+    .breadcrumb {
+      padding: 1rem 0;
+      background: var(--bg-secondary);
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.875rem;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+      content: "/";
+      margin-left: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .breadcrumb a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary-color);
+    }
+
+    .breadcrumb li:last-child span {
+      color: var(--text-primary);
+    }
+  </style>
+
+  <Navbar currentPage="blog" />
+
+  <main id="main-content" role="main" class="blog-post-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a itemprop="item" href="/">
+              <span itemprop="name">Trang chủ</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a itemprop="item" href="/blog/">
+              <span itemprop="name">Blog</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <span itemprop="name">{post.data.title}</span>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <article
+      class="blog-post"
+      itemscope
+      itemtype="https://schema.org/BlogPosting"
+    >
+      <div class="container blog-container">
+        <header class="blog-header">
+          <h1 itemprop="headline">{post.data.title}</h1>
+          <div class="blog-meta">
+            <time
+              itemprop="datePublished"
+              datetime={new Date(post.data.date).toISOString()}
+            >
+              {formatDate(post.data.date)}
+            </time>
+            <span class="meta-separator">•</span>
+            <span
+              itemprop="author"
+              itemscope
+              itemtype="https://schema.org/Person"
+            >
+              <span itemprop="name">{post.data.author}</span>
+            </span>
+          </div>
+          {
+            post.data.tags && (
+              <div class="blog-tags">
+                {post.data.tags.map((tag: string) => (
+                  <span class="blog-tag" itemprop="keywords">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )
+          }
+        </header>
+
+        <div class="blog-content" itemprop="articleBody">
+          <Content />
+        </div>
+
+        <footer class="blog-footer">
+          <a href="/blog/" class="btn btn-secondary">
+            <svg
+              class="btn-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Quay lại Blog
+          </a>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

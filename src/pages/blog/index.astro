@@ -1,0 +1,134 @@
+---
+import { getCollection } from "astro:content";
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Blog | ViType - Gõ Tiếng Việt Thông Minh";
+const description =
+  "Khám phá các bài viết về ViType, tips & tricks gõ tiếng Việt, cập nhật tính năng mới và nhiều thông tin hữu ích khác.";
+
+const posts = await getCollection("blog");
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("vi-VN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "ViType Blog",
+        description:
+          "Blog về ViType - Ứng dụng gõ tiếng Việt thông minh cho MacOS",
+        url: "https://vitype.io.vn/blog/",
+        inLanguage: "vi",
+        publisher: {
+          "@type": "Organization",
+          name: "ViType",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://vitype.io.vn/icon-512.png",
+          },
+        },
+      })}
+    />
+  </Fragment>
+
+  <style>
+    .blog-index-page {
+      padding-top: 100px;
+    }
+
+    .blog-hero {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+  </style>
+
+  <Navbar currentPage="blog" />
+
+  <main id="main-content" role="main" class="blog-index-page">
+    <section class="blog-hero">
+      <div class="container">
+        <div class="blog-hero-content">
+          <span class="section-label">Blog</span>
+          <h1 class="section-title">
+            Khám phá thêm về<br /><span class="gradient-text">ViType</span>
+          </h1>
+          <p class="section-description">
+            Tips, tutorials, cập nhật tính năng mới và nhiều thông tin hữu ích
+            khác về ViType.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-posts">
+      <div class="container">
+        <div class="blog-grid">
+          {
+            sortedPosts.map((post) => (
+              <article
+                class="blog-card"
+                itemscope
+                itemtype="https://schema.org/BlogPosting"
+              >
+                <div class="blog-card-content">
+                  <h2 itemprop="headline">
+                    <a href={`/blog/${post.slug}/`} itemprop="url">
+                      {post.data.title}
+                    </a>
+                  </h2>
+                  <div class="blog-card-meta">
+                    <time
+                      itemprop="datePublished"
+                      datetime={new Date(post.data.date).toISOString()}
+                    >
+                      {formatDate(post.data.date)}
+                    </time>
+                    <span class="meta-separator">•</span>
+                    <span
+                      itemprop="author"
+                      itemscope
+                      itemtype="https://schema.org/Person"
+                    >
+                      <span itemprop="name">{post.data.author}</span>
+                    </span>
+                  </div>
+                  <p class="blog-card-description" itemprop="description">
+                    {post.data.description}
+                  </p>
+                  {post.data.tags && (
+                    <div class="blog-card-tags">
+                      {post.data.tags.map((tag: string) => (
+                        <span class="blog-tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                  <a href={`/blog/${post.slug}/`} class="blog-card-link">
+                    Đọc tiếp →
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
