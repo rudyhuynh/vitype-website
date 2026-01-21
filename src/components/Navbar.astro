@@ -66,14 +66,21 @@ const { currentPage } = Astro.props;
     });
   });
 
-  // Navbar scroll effect
+  // Navbar scroll effect (throttled with rAF for performance)
   const navbar = document.getElementById("navbar");
+  let ticking = false;
 
   window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 50) {
-      navbar?.classList.add("scrolled");
-    } else {
-      navbar?.classList.remove("scrolled");
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.pageYOffset > 50) {
+          navbar?.classList.add("scrolled");
+        } else {
+          navbar?.classList.remove("scrolled");
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
-  });
+  }, { passive: true });
 </script>

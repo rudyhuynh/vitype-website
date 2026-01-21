@@ -298,7 +298,10 @@ const description =
               <img
                 src="/assets/dd-chrome-bug.png"
                 alt="Lỗi gõ dd trên Chrome address bar hiện dđ thay vì đ"
+                width="1604"
+                height="268"
                 loading="lazy"
+                decoding="async"
               />
               <div class="image-caption">
                 <span class="caption-icon">⚠️</span>
@@ -330,7 +333,10 @@ const description =
               <img
                 src="/assets/switch-language.png"
                 alt="Menu chuyển đổi bàn phím macOS với nhiều ngôn ngữ"
+                width="550"
+                height="338"
                 loading="lazy"
+                decoding="async"
               />
               <div class="image-caption">
                 <span class="caption-icon">🌍</span>
@@ -361,7 +367,10 @@ const description =
               <img
                 src="/assets/exclude-app.png"
                 alt="Giao diện cài đặt loại trừ ứng dụng trong ViType"
+                width="840"
+                height="746"
                 loading="lazy"
+                decoding="async"
               />
               <div class="image-caption">
                 <span class="caption-icon">⚙️</span>
@@ -467,17 +476,39 @@ const description =
 </BaseLayout>
 
 <script>
-  // Smooth Scroll for Anchor Links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  // Smooth Scroll for Anchor Links (matches #hash and /#hash)
+  document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault();
       const href = this.getAttribute("href");
       if (href) {
-        const target = document.querySelector(href);
+        // Extract hash from href (handle both #hash and /#hash)
+        const hash = href.startsWith("/#") ? href.slice(1) : href;
+        const target = document.querySelector(hash);
         if (target) {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+          e.preventDefault();
+          const navbar = document.getElementById("navbar");
+          const navbarHeight = navbar?.offsetHeight ?? 0;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY;
+          const scrollTop = Math.max(targetTop - navbarHeight, 0);
+
+          if (hash === "#download") {
+            console.log("#download scrollTop(px):", Math.round(scrollTop));
+          }
+
+          // Use instant scroll to avoid Firefox scroll-linked warning
+          window.scrollTo({
+            top: scrollTop,
+            behavior: "instant",
+          });
+
+          // Trigger animation for visible elements after instant scroll
+          requestAnimationFrame(() => {
+            document.querySelectorAll(".feature-card, .download-card").forEach((card) => {
+              const rect = card.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) {
+                card.classList.add("animate-in");
+              }
+            });
           });
         }
       }
