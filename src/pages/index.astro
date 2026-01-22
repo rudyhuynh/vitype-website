@@ -70,8 +70,8 @@ const description =
             <span>Mã nguồn mở</span>
           </div>
           <h1 class="hero-title">
-            Gõ Tiếng Việt<br />
-            <span class="gradient-text">Thông Minh</span>
+            Gõ Tiếng Việt Mã Nguồn Mở<br />
+            <span class="gradient-text">Cho Người Dùng Đa Nhiệm</span>
           </h1>
           <p class="hero-description">
             ViType là ứng dụng gõ tiếng Việt mã nguồn mở, được thiết kế để mang
@@ -503,12 +503,14 @@ const description =
 
           // Trigger animation for visible elements after instant scroll
           requestAnimationFrame(() => {
-            document.querySelectorAll(".feature-card, .download-card").forEach((card) => {
-              const rect = card.getBoundingClientRect();
-              if (rect.top < window.innerHeight && rect.bottom > 0) {
-                card.classList.add("animate-in");
-              }
-            });
+            document
+              .querySelectorAll(".feature-card, .download-card")
+              .forEach((card) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                  card.classList.add("animate-in");
+                }
+              });
           });
         }
       }
